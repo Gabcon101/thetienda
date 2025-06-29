@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Catálogo</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html">Carrito</a>
+    </nav>
+  </header>
+  <main class="productos">
+    <select id="orden" onchange="ordenar()">
+      <option value="asc">Precio: menor a mayor</option>
+      <option value="desc">Precio: mayor a menor</option>
+    </select>
+    <div class="grid" id="catalogo"></div>
+    <script src="productos.js"></script>
+    <script>
+      function ordenar() {
+        const orden = document.getElementById('orden').value;
+        mostrarProductos(orden, 'catalogo');
+      }
+      ordenar();
+    </script>
+  </main>
+</body>
+</html>
